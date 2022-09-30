@@ -33,19 +33,6 @@ def decrypt(t, s):
     t_string = "".join(t_array)
     print(t_string)
 
-def play_again():
-    yes_or_no = input("Type 'Yes' if you want to go again. Otherwise, type 'No':\n").lower() 
-
-    if yes_or_no == 'yes':
-        direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
-        text = input("Type your message:\n").lower()
-        shift = int(input("Type the shift number:\n"))
-        ceasar(d = direction, plain_t = text, plain_s = shift)
-    else:
-        flag == False   
-        print("Goodbye")  
-
-
 def ceasar(d, plain_t, plain_s):
     if direction == "encode":
         encrypt(t = plain_t, s = plain_s)    
@@ -56,8 +43,9 @@ def ceasar(d, plain_t, plain_s):
 
 while flag:
     ceasar(d = direction, plain_t = text, plain_s = shift)
-    play_again()
-    if not flag:
-        break 
 
-print(flag)
+    yes_or_no = input("Type 'Yes' if you want to go again. Otherwise, type 'No':\n").lower() 
+
+    if yes_or_no == 'no':
+        flag = False
+        print("Goodbye")  
